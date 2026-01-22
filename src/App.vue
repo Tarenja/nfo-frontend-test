@@ -20,11 +20,14 @@ onBeforeUnmount(() => {
 </script>
 
 <template>
+	<head>
+		<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"></link>
+	</head>
 	<h1>Let's build some tabs!</h1>
 	<!-- These are external buttons, to test the functionality of your component(s) -->
 	<!--Please don't remove these-->
 	<div class="buttons">
-		<button @click="activeTab = 'details'" :class="{selected: activeTab === 'details'}">Details</button>
+		<button @click="activeTab = 'details'" :class="{selected: activeTab === 'details'}"><span class="material-icons">dashboard</span>Details</button>
 		<button @click="activeTab = 'assortment'" :class="{selected: activeTab === 'assortment'}">Assortment</button>
 		<button @click="activeTab = 'questionnaires'" :class="{selected: activeTab === 'questionnaires'}">Questionnaires</button>
 		<button @click="activeTab = 'certificates'" :class="{selected: activeTab === 'certificates'}">Certificates</button>

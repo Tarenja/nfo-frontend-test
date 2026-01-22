@@ -8,17 +8,25 @@ body {
 		margin-top: 0;
 	}
 	button {
-		height: 43px;
-		padding: 0 20px;
-		margin-right: 16px;
+		padding: 12px 16px;
+		margin-right: 8px;
 		border: 2px solid transparent;
 		border-radius: 8px;
+		box-sizing: border-box;
 		background-color: white;
+		vertical-align: middle;
+		font-size: 16px;
 		&:hover {
-			border: 2px solid #999999;
+			border: 2px solid #777777;
 		}
 		&.selected {
 			background-color: #D3A9FF;
 		}
+	}
+	.material-icons {
+		font-size: 16px;
+		margin-right: 4px;
+		position: relative;
+		top: 2px;
 	}
 }
