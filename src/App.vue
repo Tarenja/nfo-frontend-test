@@ -38,7 +38,7 @@ onBeforeUnmount(() => {
 		<button @click="activeTab = 'assortment'" :class="{selected: activeTab === 'assortment'}" label="assortment">Assortment</button>
 		<button @click="activeTab = 'questionnaires'" :class="{selected: activeTab === 'questionnaires'}" label="questionnaires"><span role="img" class="material-icons">assignment_return</span>Questionnaires</button>
 		<button @click="activeTab = 'certificates'" :class="{selected: activeTab === 'certificates'}" label=""certificates>Certificates<span class="button-append"> 29</span></button>
-		<button @click="activeTab = 'agreements'" :class="{selected: activeTab === 'agreements'}" label="label">Agreements</button>
+		<button @click="activeTab = 'agreements'" :class="{selected: activeTab === 'agreements'}" label="label" disabled>Agreements</button>
 	</div>
 
 	<!-- Put the tabs component(s) here, with a v-model set to `activeTab` -->

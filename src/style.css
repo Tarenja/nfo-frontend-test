@@ -11,7 +11,7 @@
 	--dark-bg: #757575;
 	--dark-pink: #533970;
 	--dark-border: #afafaf;
-	--dark-append: #b1b1b1;
+	--dark-append: #8a8a8a;
 }
 
 body {
@@ -42,14 +42,18 @@ body {
 		background-color: light-dark(var(--light-panel), var(--dark-panel));
 		vertical-align: middle;
 		font-size: 16px;
-		&:hover {
+		&:hover:not(:disabled) {
 			border: 1px solid white;
+			cursor: pointer;
 		}
 		&.selected {
 			background-color: light-dark(var(--light-pink), var(--dark-pink));
 		}
 		.button-append {
 			color: light-dark(var(--light-append), var(--dark-append));
+		}
+		&:disabled {
+			color: light-dark(var(--light-append), var(--dark-append))
 		}
 
 		@media screen and (max-width: 900px) {
