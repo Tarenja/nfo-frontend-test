@@ -22,9 +22,9 @@
 
 <style scoped>
     .tab-panel {
-        background-color: white;
+        background-color: light-dark(var(--light-panel), var(--dark-panel));
         margin-top: 8px;
-        width: 100%;
+        max-width: 100%;
         padding: 16px;
         border-radius: 8px;
     }
