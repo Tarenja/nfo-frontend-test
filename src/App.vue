@@ -1,6 +1,6 @@
 <script setup>
 import { onBeforeUnmount, onMounted, shallowRef } from 'vue'
-import TabComponent from './TabComponent.vue'
+import TabComponent from './components/TabComponent.vue'
 
 let activeTab = shallowRef('details')
 let certificatesNum = shallowRef(10)
