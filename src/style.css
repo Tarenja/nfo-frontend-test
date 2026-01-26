@@ -1,17 +1,21 @@
 :root {
 	color-scheme: light dark;
 
-	--light-panel: white;
 	--light-bg: #E5E5E5;
-	--light-pink: #D3A9FF;
+	--light-panel: white;
+	--light-bg-grey: #F2F2F2;
+	--light-accent: #D3A9FF;
 	--light-border: #CCCCCC;
-	--light-append: #666666;
+	--light-border-focus: #999999;
+	--light-muted: #666666;
 
-	--dark-panel: #2e2e2e;
-	--dark-bg: #757575;
-	--dark-pink: #533970;
-	--dark-border: #afafaf;
-	--dark-append: #8a8a8a;
+	--dark-bg: black;
+	--dark-panel: #1A1A1A;
+	--dark-bg-grey: #0D0D0D;
+	--dark-accent: #490098;
+	--dark-border: #333333;
+	--dark-border-focus: #666666;
+	--dark-muted: #999999;
 }
 
 body {
@@ -29,43 +33,4 @@ body {
 		margin: 0;
 	}
 
-	.buttons {
-		margin-top: 16px;
-	}
-
-	button {
-		padding: 12px 16px;
-		margin-right: 8px;
-		border: 1px solid light-dark(var(--light-border), var(--dark-border));
-		border-radius: 8px;
-		box-sizing: border-box;
-		background-color: light-dark(var(--light-panel), var(--dark-panel));
-		vertical-align: middle;
-		font-size: 16px;
-		&:hover:not(:disabled) {
-			border: 1px solid white;
-			cursor: pointer;
-		}
-		&.selected {
-			background-color: light-dark(var(--light-pink), var(--dark-pink));
-		}
-		.button-append {
-			color: light-dark(var(--light-append), var(--dark-append));
-		}
-		&:disabled {
-			color: light-dark(var(--light-append), var(--dark-append))
-		}
-
-		@media screen and (max-width: 900px) {
-			display: block;
-			width: 100%;
-		}
-	}
-
-	.material-icons {
-		font-size: 16px;
-		margin-right: 4px;
-		position: relative;
-		top: 2px;
-	}
 }
