@@ -19,13 +19,7 @@
 }
 
 body {
-	background-color: light-dark(var(--light-bg), var(--dark-bg));
-	padding: 46px 48px;
 	font-family: sans-serif;
-	color: light-dark(black, white);
-	@media screen and (max-width: 1023px) {
-		padding: 23px 24px;
-	}
 
 	h1 {
 		font-weight: 400;

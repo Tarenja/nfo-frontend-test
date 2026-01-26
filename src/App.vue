@@ -1,6 +1,7 @@
 <script setup>
 import { onBeforeUnmount, onMounted, shallowRef } from 'vue'
 import TabComponent from './components/TabComponent.vue'
+import TabPanel from './components/TabPanel.vue'
 
 let activeTab = shallowRef('details')
 let certificatesNum = shallowRef(10)
@@ -30,13 +31,19 @@ onBeforeUnmount(() => {
 		<button @click="activeTab = 'details'">Details</button>
 		<button @click="activeTab = 'assortment'">Assortment</button>
 		<button @click="activeTab = 'questionnaires'">Questionnaires</button>
-		<button @click="activeTab = 'certificates'">Certificates></button>
+		<button @click="activeTab = 'certificates'">Certificates</button>
 		<button @click="activeTab = 'agreements'">Agreements</button>
 	</div>
 
 	<!-- Put the tabs component(s) here, with a v-model set to `activeTab` -->
 
-	<TabComponent v-model="activeTab"></TabComponent>
+	<TabComponent v-model="activeTab">
+		<TabPanel id="details" label="Details" imageText="dashboard">Details Content is awesome</TabPanel>
+		<TabPanel id="assortment" label="Assortment" suffix="suffix">Assortment Content is awesome</TabPanel>
+		<TabPanel id="questionnaires" label="Questionnaires">Questionnaires Content is awesome</TabPanel>
+		<TabPanel id="certificates" label="Certificates">Certificates Content is awesome</TabPanel>
+		<TabPanel id="agreements" label="Agreements">Agreements Content is awesome</TabPanel>
+	</TabComponent>
 
 </template>
 
