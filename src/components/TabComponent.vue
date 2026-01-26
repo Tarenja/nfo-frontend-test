@@ -48,10 +48,15 @@
         list-style: none;
         display: flex;
         align-items: flex-start;
-        align-self: center;
+        flex-wrap: wrap;
         padding: 0;
         margin: 0;
         gap: 8px;
+        width: 100%;
+        @media screen and (max-width: 820px){
+            flex-direction: column;
+            align-content: center;
+        }
         .tab-label {
             padding: 12px 16px;
             border: 1px solid light-dark(var(--light-border), var(--dark-border));
@@ -71,6 +76,11 @@
                 color: light-dark(var(--light-muted), var(--dark-muted));
                 cursor: not-allowed;
             }
+            @media screen and (max-width: 820px) {
+                width: 90%;
+                justify-content: center;
+            }
+
         }
         .material-icons {
             margin-right: 8px;
