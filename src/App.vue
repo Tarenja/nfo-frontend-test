@@ -40,9 +40,9 @@ onBeforeUnmount(() => {
 	<TabComponent v-model="activeTab">
 		<TabPanel id="details" label="Details" imageText="dashboard">Details Content is awesome</TabPanel>
 		<TabPanel id="assortment" label="Assortment" suffix="suffix">Assortment Content is awesome</TabPanel>
-		<TabPanel id="questionnaires" label="Questionnaires">Questionnaires Content is awesome</TabPanel>
+		<TabPanel id="questionnaires" label="Questionnaires" suffix="123">Questionnaires Content is awesome</TabPanel>
 		<TabPanel id="certificates" label="Certificates">Certificates Content is awesome</TabPanel>
-		<TabPanel id="agreements" label="Agreements">Agreements Content is awesome</TabPanel>
+		<TabPanel id="agreements" label="Agreements" disabled="true">Agreements Content is awesome</TabPanel>
 	</TabComponent>
 
 </template>

@@ -2,7 +2,6 @@
     import { ref, provide } from 'vue';
 
     const model = defineModel();
-    const props = defineProps();
     const slots = defineSlots();
 
     const tabsContent = ref(slots.default().map((tab) => tab.props))
@@ -10,6 +9,10 @@
     const activeTab = model;
 
     provide("activeTab", activeTab)
+
+    function setActiveTab(tab) {
+        if(!tab.disabled) { this.activeTab = tab.id }
+    }
 
 </script>
 
@@ -19,8 +22,9 @@
             <li 
                 v-for="tab in tabsContent" 
                 :key="tab.id" 
-                @click="activeTab = tab.id"
+                @click="setActiveTab(tab)"
                 class="tab-label"
+                :class="{'selected-tab': tab.id == activeTab, disabled: tab.disabled}"
             >
                 <span class="material-icons">{{ tab.imageText }}</span>
                 {{ tab.label }}
@@ -51,18 +55,31 @@
         .tab-label {
             padding: 12px 16px;
             border: 1px solid light-dark(var(--light-border), var(--dark-border));
-            height: 43px;
+            border-radius: 8px;
             display: flex;
             align-items: center;
-            font-weight: 400;
-            font-size: 19px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: light-dark(white, var(--dark-panel));
+            &:hover {
+                border-color: light-dark(var(--light-border-focus), var(--dark-border-focus))
+            }
+            &.selected-tab {
+                background-color: light-dark(var(--light-accent), var(--dark-accent));
+            }
+            &.disabled {
+                color: light-dark(var(--light-muted), var(--dark-muted));
+                cursor: not-allowed;
+            }
         }
         .material-icons {
             margin-right: 8px;
+            font-size: 16px;
         }
         .tab-suffix {
             margin-left: 8px;
+            color: light-dark(var(--light-muted), var(--dark-muted));
         }
-
+        
     }
 </style>
