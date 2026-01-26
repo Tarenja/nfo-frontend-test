@@ -5,11 +5,12 @@
     const props = defineProps(['id'])
 
     const activeTab = inject("activeTab")
+    const activeSubTab = inject("activeSubTab")
 
 </script>
 
 <template>
-    <div class="tab-panel" v-show="id == activeTab">
+    <div class="tab-panel" v-show="id == activeTab || id == activeSubTab">
         <slot></slot>
     </div>
 </template>

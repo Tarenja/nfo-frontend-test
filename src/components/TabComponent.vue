@@ -7,8 +7,10 @@
     const tabsContent = ref(slots.default().map((tab) => tab.props))
 
     const activeTab = model;
+    const activeSubTab = model;
 
     provide("activeTab", activeTab)
+    provide("activeSubTab", activeSubTab)
 
     function setActiveTab(tab) {
         if(!tab.disabled) { this.activeTab = tab.id }

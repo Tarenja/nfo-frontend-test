@@ -4,6 +4,7 @@ import TabComponent from './components/TabComponent.vue'
 import TabPanel from './components/TabPanel.vue'
 
 let activeTab = shallowRef('details')
+let activeSubTab = shallowRef('')
 let certificatesNum = shallowRef(10)
 let agreementsNum = shallowRef(99)
 let interval = shallowRef(null)
@@ -41,7 +42,13 @@ onBeforeUnmount(() => {
 		<TabPanel id="details" label="Details" imageText="dashboard">Details Content is awesome</TabPanel>
 		<TabPanel id="assortment" label="Assortment" suffix="suffix">Assortment Content is awesome</TabPanel>
 		<TabPanel id="questionnaires" label="Questionnaires" suffix="123">Questionnaires Content is awesome</TabPanel>
-		<TabPanel id="certificates" label="Certificates">Certificates Content is awesome</TabPanel>
+		<TabPanel id="certificates" label="Certificates">
+			Certificates Content is awesome
+			<TabComponent v-model="activeSubTab">
+				<TabPanel id="testId" label="Test ID">Test ID Content</TabPanel>
+				<TabPanel id="testId2" label="Test ID 2">Test ID Content 2</TabPanel>
+			</TabComponent>
+		</TabPanel>
 		<TabPanel id="agreements" label="Agreements" disabled="true">Agreements Content is awesome</TabPanel>
 	</TabComponent>
 
